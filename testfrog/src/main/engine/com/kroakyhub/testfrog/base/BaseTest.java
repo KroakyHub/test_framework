@@ -15,8 +15,7 @@ public class BaseTest {
 	public Properties prop = new Properties();
 	public EventFiringWebDriver driver;
 	public WebDriver baseDriver;
-	
-	
+		
 	
 	public void initializeDriver() {
 		
