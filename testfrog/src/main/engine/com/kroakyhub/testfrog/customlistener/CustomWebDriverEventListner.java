@@ -4,16 +4,20 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 
-import com.companyname.projectname.pagelibrary.CreateAnAccount;
+import com.kroakyhub.testfrog.base.BaseTest;
 import com.kroakyhub.testfrog.helper.PropertiesFileHelper;
 
-public class CustomWebDriverEventListner implements WebDriverEventListener{
+public class CustomWebDriverEventListner extends BaseTest implements WebDriverEventListener{
 	
 	static Logger log = Logger.getLogger(CustomWebDriverEventListner.class.getName());
 		
@@ -80,7 +84,7 @@ public class CustomWebDriverEventListner implements WebDriverEventListener{
 
 	public void beforeFindBy(By by, WebElement element, WebDriver driver) {
 		
-		String filePath = "./src/main/resources/frameworkconfig.properties";
+		String filePath = testClassPath + "\\src\\test\\resources\\testconfig.properties";
 		Properties prop = new Properties();
 		prop = PropertiesFileHelper.loadProperties(filePath);
 		int waitDuration = Integer.parseInt(prop.getProperty("waitduration"));
@@ -88,12 +92,19 @@ public class CustomWebDriverEventListner implements WebDriverEventListener{
 		String loaderxpath = prop.getProperty("loaderxpath"); 
 		
 		if(!loaderxpath.equalsIgnoreCase("na")){
-			wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath(loaderxpath))));
+			try{
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(loaderxpath)));
+			}catch(Exception e){
+				logging("Loader animation took time to disappear");
+			}
 		}
-				
-		wait.until(ExpectedConditions.visibilityOf(element));
-		
-		
+			
+		try{
+			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		}catch(Exception e){
+			logging("Not able to locate element " + by.toString() + " due to " + e.toString());
+		}
+			
 	}
 
 	public void afterFindBy(By by, WebElement element, WebDriver driver) {
@@ -107,7 +118,7 @@ public class CustomWebDriverEventListner implements WebDriverEventListener{
 	}
 
 	public void afterClickOn(WebElement element, WebDriver driver) {
-		log.info("Clicked on element: "+element.toString());
+		logging("Clicked on element: "+element.toString());
 		
 	}
 
@@ -117,7 +128,7 @@ public class CustomWebDriverEventListner implements WebDriverEventListener{
 	}
 
 	public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
-		log.info("Changed value of element: "+element.toString());
+		logging("Changed value of element: "+element.toString());
 		
 	}
 
@@ -132,8 +143,13 @@ public class CustomWebDriverEventListner implements WebDriverEventListener{
 	}
 
 	public void onException(Throwable throwable, WebDriver driver) {
-		log.error(throwable.toString());
 		
+		
+	}
+	
+	private void logging(String message){
+		log.info(message);
+		Reporter.log(message);
 	}
 
 }
