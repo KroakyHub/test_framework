@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import com.kroakyhub.testfrog.base.BaseTest;
 import com.kroakyhub.testfrog.helper.PropertiesFileHelper;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class CustomWebDriverEventListner extends BaseTest implements WebDriverEventListener{
 	
@@ -145,6 +146,7 @@ public class CustomWebDriverEventListner extends BaseTest implements WebDriverEv
 	
 	private void logging(String message){
 		log.info(message);
+		test.log(LogStatus.INFO, message);
 		Reporter.log(message);
 	}
 
