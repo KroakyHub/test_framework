@@ -1,6 +1,6 @@
 package com.kroakyhub.testfrog.customlistener;
 
-import java.util.Properties;
+
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import com.kroakyhub.testfrog.base.BaseTest;
-import com.kroakyhub.testfrog.helper.PropertiesFileHelper;
+import com.kroakyhub.testfrog.runner.TestEnvironmentReader;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class CustomWebDriverEventListner extends BaseTest implements WebDriverEventListener{
@@ -81,12 +81,9 @@ public class CustomWebDriverEventListner extends BaseTest implements WebDriverEv
 
 	public void beforeFindBy(By by, WebElement element, WebDriver driver) {
 		
-		String filePath = testClassPath + "\\src\\test\\resources\\testconfig.properties";
-		Properties prop = new Properties();
-		prop = PropertiesFileHelper.loadProperties(filePath);
-		int waitDuration = Integer.parseInt(prop.getProperty("waitduration"));
+		int waitDuration = Integer.parseInt(TestEnvironmentReader.environmentConfigurationMap.get("Wait Duration"));
 		WebDriverWait wait = new WebDriverWait(driver, waitDuration);
-		String loaderxpath = prop.getProperty("loaderxpath"); 
+		String loaderxpath = TestEnvironmentReader.environmentConfigurationMap.get("Loader xpath"); 
 		
 		if(!loaderxpath.equalsIgnoreCase("na")){
 			try{
@@ -109,8 +106,10 @@ public class CustomWebDriverEventListner extends BaseTest implements WebDriverEv
 		
 	}
 
-	public void beforeClickOn(WebElement element, WebDriver driver) {
-		// TODO Auto-generated method stub
+	public void beforeClickOn(WebElement element, WebDriver driver)  {
+		if(!element.isEnabled()){
+			logging("Element is not enabled : " +  element.toString());
+		}
 		
 	}
 

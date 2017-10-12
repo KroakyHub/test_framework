@@ -3,21 +3,27 @@ package com.kroakyhub.testfrog.base;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner;
+import com.kroakyhub.testfrog.helper.ExcelHelper;
 import com.kroakyhub.testfrog.helper.FileStructureHelper;
 import com.kroakyhub.testfrog.helper.PropertiesFileHelper;
+import com.kroakyhub.testfrog.runner.TestEnvironmentReader;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
@@ -39,13 +45,13 @@ public class BaseTest {
 
 		String reportPath = testClassPath + "\\testfrogreport.html";
 		report = new ExtentReports(reportPath);
-		// String log4jConfPath = frameworkClassPath + "\\src\\main\\resources\\log4j.properties";
+		
 		String log4jConfPath = frameworkClassPath + "\\log4j.properties";
 		PropertyConfigurator.configure(log4jConfPath);
 
 		String testConfigFilePath = testClassPath + "\\src\\test\\resources\\testconfig.properties";
 		prop = PropertiesFileHelper.loadProperties(testConfigFilePath);
-		setbrowser(prop.getProperty("browser"));
+		setbrowser(TestEnvironmentReader.environmentConfigurationMap.get("Browser"));
 
 		driver = new EventFiringWebDriver(baseDriver);
 		CustomWebDriverEventListner listener = new CustomWebDriverEventListner();
@@ -58,14 +64,13 @@ public class BaseTest {
 
 	public void gotoTestURL() {
 
-		driver.get(prop.getProperty("testURL"));
+		driver.get(TestEnvironmentReader.environmentConfigurationMap.get("Test URL"));
 		driver.manage().window().maximize();
 
 	}
 
 	private void setbrowser(String browser) {
 		try {
-			System.out.println("..............." + frameworkClassPath);
 			if (browser.equalsIgnoreCase("firefox")) {
 				
 				System.setProperty("webdriver.gecko.driver", frameworkClassPath + "\\geckodriver.exe");
@@ -101,6 +106,19 @@ public class BaseTest {
 				+ "height='100' width='100'/> " + "<br />");
 
 		return (imageFileName);
+	}
+	
+	public void autocompleteTyper(String text, WebElement element) {
+		try {
+			List<String> textAsArray = Arrays.asList(text.split(""));
+			for (String character : textAsArray) {
+				element.sendKeys(character);
+				Thread.sleep(300);
+			}
+			element.sendKeys(Keys.ARROW_DOWN);
+			element.sendKeys(Keys.TAB);
+		} catch (InterruptedException e) {
+		}
 	}
 
 }
