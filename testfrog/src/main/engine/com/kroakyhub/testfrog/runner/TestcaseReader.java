@@ -10,12 +10,14 @@ import com.kroakyhub.testfrog.helper.ExcelHelper;
 
 public class TestcaseReader {
 
+	
+
 	public static Map<String,List<String>> TestcaseMap;
 
-	public static void reader(String configFilePath) {
+	public static void reader(String filePath) {
 		TestcaseMap = new HashMap<String, List<String>>();
 		String sheetName = "Testcase";
-		ExcelHelper ExcelHelper = new ExcelHelper(configFilePath);
+		ExcelHelper ExcelHelper = new ExcelHelper(filePath);
 		Set<String> setOftestcaseClasspaths = ExcelHelper.getUniqueColumnItem(sheetName, "Testcase Classpath");
 		int rowCount = ExcelHelper.getRowCount(sheetName);
 		

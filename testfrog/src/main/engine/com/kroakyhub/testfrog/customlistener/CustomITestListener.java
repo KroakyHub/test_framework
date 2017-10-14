@@ -7,6 +7,7 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 
 import com.kroakyhub.testfrog.base.BaseTest;
+import com.kroakyhub.testfrog.runner.TestcaseResultWriter;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class CustomITestListener extends BaseTest implements ITestListener {
@@ -35,6 +36,8 @@ public class CustomITestListener extends BaseTest implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 
 		String screenshotName = captureScreenShot(result);
+		TestcaseResultWriter writer = new TestcaseResultWriter();
+		writer.writeResult(result, "Fail", screenshotName);
 		logging("Capturing image: " + screenshotName,"info");
 		test.log(LogStatus.INFO, test.addScreenCapture(screenshotName));
 		logging(result.getMethod().getDescription() + "-- Test failed\n","fail");
@@ -42,6 +45,8 @@ public class CustomITestListener extends BaseTest implements ITestListener {
 	}
 
 	public void onTestSkipped(ITestResult result) {
+		TestcaseResultWriter writer = new TestcaseResultWriter();
+		writer.writeResult(result, "Skip", "NA");
 		logging(result.getMethod().getDescription() + "-- Test skipped\n","skip");
 		report.endTest(test);
 	}
@@ -55,6 +60,8 @@ public class CustomITestListener extends BaseTest implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 
 		String screenshotName = captureScreenShot(result);
+		TestcaseResultWriter writer = new TestcaseResultWriter();
+		writer.writeResult(result, "Pass", screenshotName);
 		logging("Capturing image: " + screenshotName, "info");
 		test.log(LogStatus.INFO, test.addScreenCapture(screenshotName));
 		logging(result.getMethod().getDescription() + "-- Test passed\n", "pass");

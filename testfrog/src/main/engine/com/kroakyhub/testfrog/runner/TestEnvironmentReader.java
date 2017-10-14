@@ -7,15 +7,17 @@ import com.kroakyhub.testfrog.helper.ExcelHelper;
 
 public class TestEnvironmentReader {
 
+	
+
 	public static Map<String, String> environmentConfigurationMap;
 
-	public static void reader(String configFilePath){
+	public static void reader(String filePath){
 		
 		environmentConfigurationMap = new HashMap<String, String>();
 		
 		String sheetName = "Environment";
 		
-		ExcelHelper ExcelHelper = new ExcelHelper(configFilePath);
+		ExcelHelper ExcelHelper = new ExcelHelper(filePath);
 		int rowCount = ExcelHelper.getRowCount(sheetName);
 				
 		int rowNum;

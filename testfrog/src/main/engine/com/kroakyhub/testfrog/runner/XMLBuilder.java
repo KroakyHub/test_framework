@@ -12,10 +12,12 @@ import org.testng.xml.XmlTest;
 
 public class XMLBuilder {
 	
-	public static List<XmlSuite> build(String configFilePath){
+	
+
+	public static List<XmlSuite> build(String filePath){
 						
-		TestEnvironmentReader.reader(configFilePath);
-		TestcaseReader.reader(configFilePath);
+		TestEnvironmentReader.reader(filePath);
+		TestcaseReader.reader(filePath);
 		
 		// Creating "suite"
 		XmlSuite xmlSuite = new XmlSuite();
