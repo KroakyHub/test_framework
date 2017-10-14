@@ -7,8 +7,15 @@ import org.testng.xml.XmlSuite;
 
 public class TestFrog {
 
-	public void run(String configFilePath){
-		List<XmlSuite> suites = XMLBuilder.build(configFilePath);
+	public static String filePath;
+	
+	public TestFrog(String filePath){
+		TestFrog.filePath = filePath;
+	}
+	
+	public void run(){
+		List<XmlSuite> suites = XMLBuilder.build(filePath);
+		TestcaseResultWriter writer = new TestcaseResultWriter(filePath);
 		TestNG testng = new TestNG();
     	testng.setXmlSuites(suites);
     	testng.run();
