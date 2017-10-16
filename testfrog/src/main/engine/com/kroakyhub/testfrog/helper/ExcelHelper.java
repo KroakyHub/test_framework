@@ -343,7 +343,9 @@ public class ExcelHelper {
 			}
 			row = sheet.getRow(rowNum - 1);
 			XSSFCell cell = row.getCell(col_Num);
-			if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+			if(cell == null){
+				return "";
+			} else if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
 				return cell.getStringCellValue();
 			} else if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
 				return String.valueOf(cell.getNumericCellValue());
@@ -351,7 +353,7 @@ public class ExcelHelper {
 				return String.valueOf(cell.getBooleanCellValue());
 			} else if (cell.getCellType() == Cell.CELL_TYPE_BLANK) {
 				return "";
-			}
+			} 
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -368,13 +370,17 @@ public class ExcelHelper {
 			XSSFRow row = sheet.getRow(0);
 			row = sheet.getRow(rowNum - 1);
 			XSSFCell cell = row.getCell(colNum - 1);
-			if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+			if(cell == null){
+				return "";
+			} else if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
 				return cell.getStringCellValue();
 			} else if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
 				return String.valueOf(Math.round(cell.getNumericCellValue()));
 			} else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN) {
 				return String.valueOf(cell.getBooleanCellValue());
 			} else if (cell.getCellType() == Cell.CELL_TYPE_BLANK) {
+				return "";
+			} else {
 				return "";
 			}
 
@@ -440,7 +446,9 @@ public class ExcelHelper {
 			for (rowNum = 2; rowNum <= rowCount; rowNum++) {
 				row = sheet.getRow(rowNum - 1);
 				XSSFCell cell = row.getCell(col_Num);
-				if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+				if(cell == null){
+					cellValue = "";
+				} else if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
 					cellValue = cell.getStringCellValue();
 				} else if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
 					cellValue = String.valueOf(cell.getNumericCellValue());
@@ -476,7 +484,9 @@ public class ExcelHelper {
 			for (rowNum = 2; rowNum <= rowCount; rowNum++) {
 				row = sheet.getRow(rowNum - 1);
 				XSSFCell cell = row.getCell(colNum);
-				if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+				if(cell == null){
+					cellValue = "";
+				} else if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
 					cellValue = cell.getStringCellValue();
 				} else if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
 					cellValue = String.valueOf(cell.getNumericCellValue());
