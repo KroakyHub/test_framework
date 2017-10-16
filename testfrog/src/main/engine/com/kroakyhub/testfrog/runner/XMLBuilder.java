@@ -17,7 +17,7 @@ public class XMLBuilder {
 	public static List<XmlSuite> build(String filePath){
 						
 		TestEnvironmentReader.reader(filePath);
-		TestcaseReader.reader(filePath);
+		TestcaseReader.runSelect(filePath);
 		
 		// Creating "suite"
 		XmlSuite xmlSuite = new XmlSuite();
