@@ -35,6 +35,50 @@ public class ExcelHelper {
 		}
 	}
 
+	public int getRowNumber(String sheetName, String colName, String rowValue){
+		try {
+			int rowNum = 0;
+			int col_Num = 0;
+			int index = workbook.getSheetIndex(sheetName);
+			sheet = workbook.getSheetAt(index);
+			XSSFRow row = sheet.getRow(0);
+			for (int i = 0; i < row.getLastCellNum(); i++) {
+				if (row.getCell(i).getStringCellValue().equalsIgnoreCase(colName)) {
+					col_Num = i;
+				}
+			}
+			for(int i = 0 ; i < getRowCount(sheetName) ; i++){
+				XSSFRow tempRow = sheet.getRow(i);
+				if (tempRow.getCell(col_Num).getStringCellValue().equalsIgnoreCase(rowValue)){
+					rowNum = i + 1;
+				}
+			}
+			return rowNum;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public int getRowNumber(String sheetName, int col_Num, String rowValue){
+		try {
+			int rowNum = 0;
+			int index = workbook.getSheetIndex(sheetName);
+			sheet = workbook.getSheetAt(index);
+			
+			for(int i = 0 ; i < getRowCount(sheetName) ; i++){
+				XSSFRow tempRow = sheet.getRow(i);
+				if (tempRow.getCell(col_Num).getStringCellValue().equalsIgnoreCase(rowValue)){
+					rowNum = i + 1;
+				}
+			}
+			return rowNum;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
 	public void setFont(String sheetName, int rowNum, String colName, String colour, boolean bold, boolean italic){
 		try {
 			int col_Num = 0;
@@ -42,7 +86,7 @@ public class ExcelHelper {
 			sheet = workbook.getSheetAt(index);
 			XSSFRow row = sheet.getRow(0);
 			for (int i = 0; i < row.getLastCellNum(); i++) {
-				if (row.getCell(i).getStringCellValue().equals(colName)) {
+				if (row.getCell(i).getStringCellValue().equalsIgnoreCase(colName)) {
 					col_Num = i;
 				}
 			}
@@ -156,7 +200,7 @@ public class ExcelHelper {
 			sheet = workbook.getSheetAt(index);
 			XSSFRow row = sheet.getRow(0);
 			for (int i = 0; i < row.getLastCellNum(); i++) {
-				if (row.getCell(i).getStringCellValue().equals(colName)) {
+				if (row.getCell(i).getStringCellValue().equalsIgnoreCase(colName)) {
 					col_Num = i;
 				}
 			}
@@ -230,7 +274,7 @@ public class ExcelHelper {
 			sheet = workbook.getSheetAt(index);
 			XSSFRow row = sheet.getRow(0);
 			for (int i = 0; i < row.getLastCellNum(); i++) {
-				if (row.getCell(i).getStringCellValue().equals(colName)) {
+				if (row.getCell(i).getStringCellValue().equalsIgnoreCase(colName)) {
 					col_Num = i;
 				}
 			}
@@ -337,7 +381,7 @@ public class ExcelHelper {
 			sheet = workbook.getSheetAt(index);
 			XSSFRow row = sheet.getRow(0);
 			for (int i = 0; i < row.getLastCellNum(); i++) {
-				if (row.getCell(i).getStringCellValue().equals(colName)) {
+				if (row.getCell(i).getStringCellValue().equalsIgnoreCase(colName)) {
 					col_Num = i;
 				}
 			}
@@ -436,7 +480,7 @@ public class ExcelHelper {
 			sheet = workbook.getSheetAt(index);
 			XSSFRow row = sheet.getRow(0);
 			for (int i = 0; i < row.getLastCellNum(); i++) {
-				if (row.getCell(i).getStringCellValue().equals(colName)) {
+				if (row.getCell(i).getStringCellValue().equalsIgnoreCase(colName)) {
 					col_Num = i;
 				}
 			}

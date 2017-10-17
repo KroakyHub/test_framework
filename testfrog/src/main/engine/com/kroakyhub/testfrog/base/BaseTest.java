@@ -79,6 +79,9 @@ public class BaseTest {
 				System.setProperty("webdriver.chrome.driver", frameworkClassPath + "\\chromedriver.exe");
 				baseDriver = new ChromeDriver();
 				baseDriver.manage().window().maximize();
+			}else {
+				System.out.println("Browser not available");
+				System.exit(0);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
