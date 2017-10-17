@@ -78,7 +78,10 @@ public class BaseTest {
 			} else if (browser.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver", frameworkClassPath + "\\chromedriver.exe");
 				baseDriver = new ChromeDriver();
-				driver.manage().window().maximize();
+				baseDriver.manage().window().maximize();
+			}else {
+				System.out.println("Browser not available");
+				System.exit(0);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
