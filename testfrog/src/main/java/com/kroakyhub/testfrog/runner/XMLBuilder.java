@@ -21,7 +21,8 @@ public class XMLBuilder {
 		
 		// Creating "suite"
 		XmlSuite xmlSuite = new XmlSuite();
-    	xmlSuite.setName(TestEnvironmentReader.environmentConfigurationMap.get("Suite Name"));
+		String name = TestEnvironmentReader.environmentConfigurationMap.get("Test Suite");
+    	xmlSuite.setName(name);
     	    	
     	// Creating listener tag
     	List<String> listeners = new ArrayList<String>();
