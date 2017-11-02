@@ -1,7 +1,5 @@
 package com.kroakyhub.testfrog.base;
 
-import static io.restassured.RestAssured.given;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -13,9 +11,6 @@ import java.util.Map;
 import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.PropertyConfigurator;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -34,13 +29,7 @@ import com.kroakyhub.testfrog.runner.TestEnvironmentReader;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-
 public class BaseTest {
-
-	// <----------------------------------- UI Testing
-	// -------------------------------------->
 
 	public Properties prop = new Properties();
 	public EventFiringWebDriver driver;

@@ -10,33 +10,14 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.testng.ITestResult;
-import org.testng.Reporter;
-import com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner;
-import com.kroakyhub.testfrog.helper.ExcelHelper;
-import com.kroakyhub.testfrog.helper.FileStructureHelper;
-import com.kroakyhub.testfrog.helper.PropertiesFileHelper;
-import com.kroakyhub.testfrog.runner.TestEnvironmentReader;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-
 public class BaseTest {
 
 	
