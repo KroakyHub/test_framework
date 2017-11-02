@@ -7,8 +7,9 @@ import java.util.Properties;
 
 public class PropertiesFileHelper {
 
+	private Properties prop = null;
 	
-	public static Properties loadProperties(String filePath) {
+	private void loadProperties(String filePath) {
 		
 		Properties prop = new Properties();
 		try{
@@ -17,8 +18,14 @@ public class PropertiesFileHelper {
 		}catch(IOException e){
 			
 		}
+	}
+	
+	public String readProperty(String filePath, String key){
+		String value;
+		loadProperties(filePath);
+		value = prop.getProperty(key);
+		return value;
 		
-		return prop;
 	}
 
 }

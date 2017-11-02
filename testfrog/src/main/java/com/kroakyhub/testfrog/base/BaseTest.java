@@ -50,7 +50,6 @@ public class BaseTest {
 		PropertyConfigurator.configure(log4jConfPath);
 
 		String testConfigFilePath = testClassPath + "\\src\\test\\resources\\testconfig.properties";
-		prop = PropertiesFileHelper.loadProperties(testConfigFilePath);
 		setbrowser(TestEnvironmentReader.environmentConfigurationMap.get("Browser"));
 
 		driver = new EventFiringWebDriver(baseDriver);
