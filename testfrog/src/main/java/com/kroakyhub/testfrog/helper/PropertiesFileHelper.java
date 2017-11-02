@@ -7,22 +7,22 @@ import java.util.Properties;
 
 public class PropertiesFileHelper {
 
-	private Properties prop = null;
 	
-	private void loadProperties(String filePath) {
-		
+	
+	private Properties loadProperties(String filePath) {
 		Properties prop = new Properties();
 		try{
 			InputStream input = new FileInputStream(filePath);
 			prop.load(input);
 		}catch(IOException e){
-			
+			e.printStackTrace();
 		}
+		return prop;
 	}
 	
 	public String readProperty(String filePath, String key){
 		String value;
-		loadProperties(filePath);
+		Properties prop = loadProperties(filePath);
 		value = prop.getProperty(key);
 		return value;
 		
