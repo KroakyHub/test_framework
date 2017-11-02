@@ -137,17 +137,7 @@ public class BaseTest {
 		}
 	}
 
-	// <----------------------------------- API Testing
-	// -------------------------------------->
-
-	public String baseURI;
-	public String basePath;
-	public String endPoint;
-	public Map<String, Object> headerMap = new HashMap<String, Object>();
-	public Map<String, Object> queryParamMap = new HashMap<String, Object>();
-	public Map<String, Object> pathParamMap = new HashMap<String, Object>();
-	public Object pojo;
-	public String jsonFilePath;
+	
 
 	public void initializeReports() {
 		String reportPath = testClassPath + "\\testfrogreport.html";
@@ -157,60 +147,6 @@ public class BaseTest {
 		PropertyConfigurator.configure(log4jConfPath);
 	}
 
-	public Response get() {
-		RestAssured.baseURI = baseURI;
-		RestAssured.basePath = basePath;
-		Response response = given().headers(headerMap).queryParams(queryParamMap).pathParams(pathParamMap).when()
-				.get(endPoint);
-		return response;
-
-	}
-
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public Response post(Class c) {
-
-		ObjectMapper objectMapper = new ObjectMapper();
-		Response response = null;
-		try {
-
-			pojo = objectMapper.readValue(new File(testClassPath + jsonFilePath), c);
-			RestAssured.baseURI = baseURI;
-			RestAssured.basePath = basePath;
-			response = given().headers(headerMap).queryParams(queryParamMap).pathParams(pathParamMap).body(pojo).when()
-					.post(endPoint);
-
-		} catch (JsonParseException e) {
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return response;
-	}
-
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public Response patch(Class c) {
-		ObjectMapper objectMapper = new ObjectMapper();
-		Response response = null;
-		try {
-
-			pojo = objectMapper.readValue(new File(testClassPath + jsonFilePath), c);
-			RestAssured.baseURI = baseURI;
-			RestAssured.basePath = basePath;
-			response = given().headers(headerMap).queryParams(queryParamMap).pathParams(pathParamMap).body(pojo).when()
-					.patch(endPoint);
-
-		} catch (JsonParseException e) {
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return response;
-	}
+	
 
 }
