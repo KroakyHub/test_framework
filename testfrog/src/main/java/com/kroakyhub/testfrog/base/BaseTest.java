@@ -31,14 +31,36 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 public class BaseTest {
 
-	public Properties prop = new Properties();
-	public EventFiringWebDriver driver;
-	public WebDriver baseDriver;
-	public String frameworkClassPath = System.getenv("DRIVER_HOME");
-	public String testClassPath = System.getProperty("user.dir");
-	public static ExtentReports report;
-	public static ExtentTest test;
+	
+	private EventFiringWebDriver driver;
+	private WebDriver baseDriver;
+	private String frameworkClassPath = System.getenv("DRIVER_HOME");
+	private String testClassPath = System.getProperty("user.dir");
+	private static ExtentReports report;
+	private static ExtentTest test;
 
+	
+
+	public static ExtentReports getReport() {
+		return report;
+	}
+
+	public static ExtentTest getTest() {
+		return test;
+	}
+	
+	public static void setTest(ExtentTest test) {
+		BaseTest.test = test;
+	}
+
+	public String getFrameworkClassPath() {
+		return frameworkClassPath;
+	}
+
+	public String getTestClassPath() {
+		return testClassPath;
+	}
+	
 	public EventFiringWebDriver getDriver() {
 		return driver;
 	}
@@ -66,24 +88,44 @@ public class BaseTest {
 
 	private void setbrowser(String browser) {
 		try {
-			if (browser.equalsIgnoreCase("firefox")) {
-
-				System.setProperty("webdriver.gecko.driver", frameworkClassPath + "\\geckodriver.exe");
-				baseDriver = new FirefoxDriver();
-			} else if (browser.equalsIgnoreCase("chrome")) {
-				System.setProperty("webdriver.chrome.driver", frameworkClassPath + "\\chromedriver.exe");
-				baseDriver = new ChromeDriver();
-				baseDriver.manage().window().maximize();
-			} else {
-				System.out.println("Browser not available");
-				System.exit(0);
+			String os = System.getProperty("os.name").toLowerCase();
+			if (os.contains("windows")) {
+				if (browser.equalsIgnoreCase("firefox")) {
+					System.setProperty("webdriver.gecko.driver", frameworkClassPath + "\\geckodriver.exe");
+					baseDriver = new FirefoxDriver();
+				} else if (browser.equalsIgnoreCase("chrome")) {
+					System.setProperty("webdriver.chrome.driver", frameworkClassPath + "\\chromedriver.exe");
+					baseDriver = new ChromeDriver();
+					baseDriver.manage().window().maximize();
+				} else {
+					System.out.println("Browser not available");
+					System.exit(0);
+				}
+			}else if(os.contains("linux")){
+				if (browser.equalsIgnoreCase("firefox")) {
+					
+				} else if (browser.equalsIgnoreCase("chrome")) {
+					
+				} else {
+					System.out.println("Browser not available");
+					System.exit(0);
+				}
+			}else if(os.contains("mac")){
+				if (browser.equalsIgnoreCase("firefox")) {
+					
+				} else if (browser.equalsIgnoreCase("chrome")) {
+					
+				} else {
+					System.out.println("Browser not available");
+					System.exit(0);
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public String captureScreenShot(ITestResult result) {
+	protected String captureScreenShot(ITestResult result) {
 		String imageFileName = "";
 
 		Object currentClass = result.getInstance();
@@ -126,16 +168,9 @@ public class BaseTest {
 		}
 	}
 
-	
-
 	public void initializeReports() {
 		String reportPath = testClassPath + "\\testfrogreport.html";
 		report = new ExtentReports(reportPath);
-
-		String log4jConfPath = frameworkClassPath + "\\log4j.properties";
-		PropertyConfigurator.configure(log4jConfPath);
 	}
-
-	
 
 }

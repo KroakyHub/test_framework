@@ -145,7 +145,7 @@ public class CustomWebDriverEventListner extends BaseTest implements WebDriverEv
 	
 	private void logging(String message){
 		log.info(message);
-		test.log(LogStatus.INFO, message);
+		getTest().log(LogStatus.INFO, message);
 		Reporter.log(message);
 	}
 

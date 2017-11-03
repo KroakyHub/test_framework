@@ -16,8 +16,8 @@ public class CustomITestListener extends BaseTest implements ITestListener {
 
 	public void onFinish(ITestContext arg0) {
 		logging("Test suite has has finished","info");
-		report.flush();
-		report.close();
+		getReport().flush();
+		getReport().close();
 	}
 
 	public void onStart(ITestContext arg0) {
@@ -39,20 +39,20 @@ public class CustomITestListener extends BaseTest implements ITestListener {
 		TestcaseResultWriter writer = new TestcaseResultWriter();
 		writer.writeResult(result, "Fail", screenshotName);
 		logging("Capturing image: " + screenshotName,"info");
-		test.log(LogStatus.INFO, test.addScreenCapture(screenshotName));
+		getTest().log(LogStatus.INFO, getTest().addScreenCapture(screenshotName));
 		logging(result.getMethod().getDescription() + "-- Test failed\n","fail");
-		report.endTest(test);
+		getReport().endTest(getTest());
 	}
 
 	public void onTestSkipped(ITestResult result) {
 		TestcaseResultWriter writer = new TestcaseResultWriter();
 		writer.writeResult(result, "Skip", "NA");
 		logging(result.getMethod().getDescription() + "-- Test skipped\n","skip");
-		report.endTest(test);
+		getReport().endTest(getTest());
 	}
 
 	public void onTestStart(ITestResult result) {
-		test = report.startTest(result.getMethod().getDescription());
+		setTest(getReport().startTest(result.getMethod().getDescription()))  ;
 		logging("Starting test: " + result.getMethod().getDescription(),"info");
 
 	}
@@ -63,9 +63,9 @@ public class CustomITestListener extends BaseTest implements ITestListener {
 		TestcaseResultWriter writer = new TestcaseResultWriter();
 		writer.writeResult(result, "Pass", screenshotName);
 		logging("Capturing image: " + screenshotName, "info");
-		test.log(LogStatus.INFO, test.addScreenCapture(screenshotName));
+		getTest().log(LogStatus.INFO, getTest().addScreenCapture(screenshotName));
 		logging(result.getMethod().getDescription() + "-- Test passed\n", "pass");
-		report.endTest(test);
+		getReport().endTest(getTest());
 	}
 
 	private void logging(String message, String logType) {
@@ -73,16 +73,16 @@ public class CustomITestListener extends BaseTest implements ITestListener {
 
 		if (logType.equalsIgnoreCase("info")) {
 			log.info(message);
-			test.log(LogStatus.INFO, message);
+			getTest().log(LogStatus.INFO, message);
 		}else if(logType.equalsIgnoreCase("fail")) {
 			log.error(message);
-			test.log(LogStatus.FAIL, message);
+			getTest().log(LogStatus.FAIL, message);
 		}else if(logType.equalsIgnoreCase("pass")){
 			log.info(message);
-			test.log(LogStatus.PASS, message);
+			getTest().log(LogStatus.PASS, message);
 		}else if(logType.equalsIgnoreCase("skip")){
 			log.info(message);
-			test.log(LogStatus.SKIP, message);
+			getTest().log(LogStatus.SKIP, message);
 		}
 	}
 

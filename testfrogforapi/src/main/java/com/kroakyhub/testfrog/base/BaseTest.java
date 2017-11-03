@@ -22,26 +22,39 @@ public class BaseTest
 {
 
 
-    public String testClassPath = System.getProperty( "user.dir" );
-    public static ExtentReports report;
-    public static ExtentTest test;
-    public String baseURI;
-    public String basePath;
-    public String endPoint;
-    public Map<String, Object> headerMap = new HashMap<String, Object>();
-    public Map<String, Object> queryParamMap = new HashMap<String, Object>();
-    public Map<String, Object> pathParamMap = new HashMap<String, Object>();
-    public Object pojo;
-    public String jsonFilePath;
+    private String testClassPath = System.getProperty( "user.dir" );
+    private static ExtentReports report;
+    private static ExtentTest test;
+    protected String baseURI;
+    protected String basePath;
+    protected String endPoint;
+    protected Map<String, Object> headerMap = new HashMap<String, Object>();
+    protected Map<String, Object> queryParamMap = new HashMap<String, Object>();
+    protected Map<String, Object> pathParamMap = new HashMap<String, Object>();
+    protected Object pojo;
+    protected String jsonFilePath;
 
 
-    public void initializeReports()
+    public static ExtentReports getReport() {
+		return report;
+	}
+
+
+	public static ExtentTest getTest() {
+		return test;
+	}
+
+
+	protected static void setTest(ExtentTest test) {
+		BaseTest.test = test;
+	}
+
+
+	public void initializeReports()
     {
         String reportPath = testClassPath + File.pathSeparator + "testfrogreport.html";
         report = new ExtentReports( reportPath );
-
-        /*String log4jConfPath = frameworkClassPath + File.pathSeparator + "log4j.properties";
-        PropertyConfigurator.configure( log4jConfPath );*/
+      
     }
 
 
