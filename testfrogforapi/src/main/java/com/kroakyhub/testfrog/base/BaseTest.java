@@ -52,7 +52,7 @@ public class BaseTest
 
 	public void initializeReports()
     {
-        String reportPath = testClassPath + File.pathSeparator + "testfrogreport.html";
+        String reportPath = testClassPath + "\\testfrogreport.html";
         report = new ExtentReports( reportPath );
       
     }
