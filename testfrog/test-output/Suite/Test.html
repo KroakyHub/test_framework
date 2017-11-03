@@ -1,0 +1,669 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/9/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Sep 20 17:48:19 IST 2017</td>
+</tr>
+<tr><td>Total time:</td><td>14 seconds (14221 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.infrrd.roostify.testcase.HomePageTestCase.checkEnablingOfGetMyOptionsButton()'><b>checkEnablingOfGetMyOptionsButton</b><br>Test class: com.infrrd.roostify.testcase.HomePageTestCase<br>Test method: Validating Get My Options is not enabled if madatory data is not filled<br/>
+<a href="#Output-272678513" onClick='toggleBox("Output-272678513", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-272678513" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-272678513">
+File path: C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-26-checkEnablingOfGetMyOptionsButton.png<br/>
+<a href="C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-26-checkEnablingOfGetMyOptionsButton.png"><img src="file:///C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-26-checkEnablingOfGetMyOptionsButton.png" alt=""height='500' width='500'/> <br /><br/>
+checkEnablingOfGetMyOptionsButton-- Test method failed
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.getMyOptionsEnablingCheck(HomePagePageLibrary.java:188)
+	at com.infrrd.roostify.testcase.HomePageTestCase.checkEnablingOfGetMyOptionsButton(HomePageTestCase.java:70)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace272678513", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace272678513'><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.getMyOptionsEnablingCheck(HomePagePageLibrary.java:188)
+	at com.infrrd.roostify.testcase.HomePageTestCase.checkEnablingOfGetMyOptionsButton(HomePageTestCase.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>4</td>
+<td>com.infrrd.roostify.testcase.HomePageTestCase@dc24521</td></tr>
+<tr>
+<td title='com.infrrd.roostify.testcase.HomePageTestCase.validateGraphLegends()'><b>validateGraphLegends</b><br>Test class: com.infrrd.roostify.testcase.HomePageTestCase<br>Test method: Validating graph legends<br/>
+<a href="#Output-2144665602" onClick='toggleBox("Output-2144665602", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2144665602" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2144665602">
+File path: C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-27-validateGraphLegends.png<br/>
+<a href="C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-27-validateGraphLegends.png"><img src="file:///C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-27-validateGraphLegends.png" alt=""height='500' width='500'/> <br /><br/>
+validateGraphLegends-- Test method failed
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.verifyingGraphLegends(HomePagePageLibrary.java:102)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateGraphLegends(HomePageTestCase.java:48)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2144665602", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2144665602'><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.verifyingGraphLegends(HomePagePageLibrary.java:102)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateGraphLegends(HomePageTestCase.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.infrrd.roostify.testcase.HomePageTestCase@dc24521</td></tr>
+<tr>
+<td title='com.infrrd.roostify.testcase.HomePageTestCase.validateOptionsForPurchase()'><b>validateOptionsForPurchase</b><br>Test class: com.infrrd.roostify.testcase.HomePageTestCase<br>Test method: Validating presence of relevant fields for purchase <br/>
+<a href="#Output-685558284" onClick='toggleBox("Output-685558284", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-685558284" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-685558284">
+File path: C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-28-validateOptionsForPurchase.png<br/>
+<a href="C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-28-validateOptionsForPurchase.png"><img src="file:///C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-28-validateOptionsForPurchase.png" alt=""height='500' width='500'/> <br /><br/>
+validateOptionsForPurchase-- Test method failed
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.addUserInputForPurchase(HomePagePageLibrary.java:28)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateOptionsForPurchase(HomePageTestCase.java:27)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace685558284", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace685558284'><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.addUserInputForPurchase(HomePagePageLibrary.java:28)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateOptionsForPurchase(HomePageTestCase.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.infrrd.roostify.testcase.HomePageTestCase@dc24521</td></tr>
+<tr>
+<td title='com.infrrd.roostify.testcase.HomePageTestCase.validateOptionsForRefinance()'><b>validateOptionsForRefinance</b><br>Test class: com.infrrd.roostify.testcase.HomePageTestCase<br>Test method: Validating presence of relevant fields for refinance <br/>
+<a href="#Output-1292738535" onClick='toggleBox("Output-1292738535", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1292738535" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1292738535">
+File path: C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-28-validateOptionsForRefinance.png<br/>
+<a href="C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-28-validateOptionsForRefinance.png"><img src="file:///C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-28-validateOptionsForRefinance.png" alt=""height='500' width='500'/> <br /><br/>
+validateOptionsForRefinance-- Test method failed
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.addUserInputForRefinance(HomePagePageLibrary.java:54)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateOptionsForRefinance(HomePageTestCase.java:34)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1292738535", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1292738535'><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.addUserInputForRefinance(HomePagePageLibrary.java:54)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateOptionsForRefinance(HomePageTestCase.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.infrrd.roostify.testcase.HomePageTestCase@dc24521</td></tr>
+<tr>
+<td title='com.infrrd.roostify.testcase.HomePageTestCase.validateOptionsForRefinanceCashout()'><b>validateOptionsForRefinanceCashout</b><br>Test class: com.infrrd.roostify.testcase.HomePageTestCase<br>Test method: Validating presence of relevant fields for refinance cashout<br/>
+<a href="#Output-1721246982" onClick='toggleBox("Output-1721246982", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1721246982" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1721246982">
+File path: C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-29-validateOptionsForRefinanceCashout.png<br/>
+<a href="C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-29-validateOptionsForRefinanceCashout.png"><img src="file:///C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-29-validateOptionsForRefinanceCashout.png" alt=""height='500' width='500'/> <br /><br/>
+validateOptionsForRefinanceCashout-- Test method failed
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.addUserInputForRefinanceCashOut(HomePagePageLibrary.java:75)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateOptionsForRefinanceCashout(HomePageTestCase.java:41)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1721246982", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1721246982'><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.addUserInputForRefinanceCashOut(HomePagePageLibrary.java:75)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateOptionsForRefinanceCashout(HomePageTestCase.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.infrrd.roostify.testcase.HomePageTestCase@dc24521</td></tr>
+<tr>
+<td title='com.infrrd.roostify.testcase.HomePageTestCase.validateOtherOptimizations()'><b>validateOtherOptimizations</b><br>Test class: com.infrrd.roostify.testcase.HomePageTestCase<br>Test method: Validating other optimizations section<br/>
+<a href="#Output-1704491411" onClick='toggleBox("Output-1704491411", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1704491411" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1704491411">
+File path: C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-30-validateOtherOptimizations.png<br/>
+<a href="C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-30-validateOtherOptimizations.png"><img src="file:///C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-30-validateOtherOptimizations.png" alt=""height='500' width='500'/> <br /><br/>
+validateOtherOptimizations-- Test method failed
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.validateOtherOptimizationsAndOptions(HomePagePageLibrary.java:133)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateOtherOptimizations(HomePageTestCase.java:56)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1704491411", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1704491411'><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.validateOtherOptimizationsAndOptions(HomePagePageLibrary.java:133)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateOtherOptimizations(HomePageTestCase.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.infrrd.roostify.testcase.HomePageTestCase@dc24521</td></tr>
+<tr>
+<td title='com.infrrd.roostify.testcase.HomePageTestCase.validateZipCodeError()'><b>validateZipCodeError</b><br>Test class: com.infrrd.roostify.testcase.HomePageTestCase<br>Test method: Validating Zip code error block<br/>
+<a href="#Output-116734858" onClick='toggleBox("Output-116734858", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-116734858" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-116734858">
+File path: C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-31-validateZipCodeError.png<br/>
+<a href="C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-31-validateZipCodeError.png"><img src="file:///C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-31-validateZipCodeError.png" alt=""height='500' width='500'/> <br /><br/>
+validateZipCodeError-- Test method failed
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.sendKeys(Unknown Source)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.validateZipCodeLookupError(HomePagePageLibrary.java:206)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateZipCodeError(HomePageTestCase.java:77)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace116734858", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace116734858'><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.sendKeys(Unknown Source)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.validateZipCodeLookupError(HomePagePageLibrary.java:206)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateZipCodeError(HomePageTestCase.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.infrrd.roostify.testcase.HomePageTestCase@dc24521</td></tr>
+<tr>
+<td title='com.infrrd.roostify.testcase.HomePageTestCase.validateZipCodeLookUp()'><b>validateZipCodeLookUp</b><br>Test class: com.infrrd.roostify.testcase.HomePageTestCase<br>Test method: Validate zip code look up container<br/>
+<a href="#Output-438589491" onClick='toggleBox("Output-438589491", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-438589491" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-438589491">
+File path: C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-32-validateZipCodeLookUp.png<br/>
+<a href="C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-32-validateZipCodeLookUp.png"><img src="file:///C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-32-validateZipCodeLookUp.png" alt=""height='500' width='500'/> <br /><br/>
+validateZipCodeLookUp-- Test method failed
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.sendKeys(Unknown Source)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.validateZipCodeLookUpContainer(HomePagePageLibrary.java:224)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateZipCodeLookUp(HomePageTestCase.java:84)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace438589491", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace438589491'><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.sendKeys(Unknown Source)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.validateZipCodeLookUpContainer(HomePagePageLibrary.java:224)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validateZipCodeLookUp(HomePageTestCase.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.infrrd.roostify.testcase.HomePageTestCase@dc24521</td></tr>
+<tr>
+<td title='com.infrrd.roostify.testcase.HomePageTestCase.validatingLeadForm()'><b>validatingLeadForm</b><br>Test class: com.infrrd.roostify.testcase.HomePageTestCase<br>Test method: Validating Lead form upon clicking get this loan button <br/>
+<a href="#Output-1534694976" onClick='toggleBox("Output-1534694976", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1534694976" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1534694976">
+File path: C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-32-validatingLeadForm.png<br/>
+<a href="C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-32-validatingLeadForm.png"><img src="file:///C:\Users\E6430\Desktop\GitHub\test_framework\testfrog\src\test\screenshots\09-20-2017_17-32-validatingLeadForm.png" alt=""height='500' width='500'/> <br /><br/>
+validatingLeadForm-- Test method failed
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.validatingLeadFormDetailsContainer(HomePagePageLibrary.java:161)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validatingLeadForm(HomePageTestCase.java:63)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1534694976", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1534694976'><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.WebDriverWait.until(Ljava/util/function/Function;)Ljava/lang/Object;
+	at com.kroakyhub.testfrog.customlistener.CustomWebDriverEventListner.beforeFindBy(CustomWebDriverEventListner.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$1.invoke(EventFiringWebDriver.java:80)
+	at com.sun.proxy.$Proxy5.beforeFindBy(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:187)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:44)
+	at com.infrrd.roostify.pagelibrary.HomePagePageLibrary.validatingLeadFormDetailsContainer(HomePagePageLibrary.java:161)
+	at com.infrrd.roostify.testcase.HomePageTestCase.validatingLeadForm(HomePageTestCase.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+</pre></div></td>
+<td>0</td>
+<td>com.infrrd.roostify.testcase.HomePageTestCase@dc24521</td></tr>
+</table><p>
+</body>
+</html>
