@@ -20,8 +20,6 @@ import io.restassured.response.Response;
 
 public class BaseTest
 {
-
-
     private String testClassPath = System.getProperty( "user.dir" );
     private static ExtentReports report;
     private static ExtentTest test;

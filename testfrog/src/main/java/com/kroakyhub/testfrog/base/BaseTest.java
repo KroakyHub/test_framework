@@ -91,30 +91,24 @@ public class BaseTest {
 			String os = System.getProperty("os.name").toLowerCase();
 			if (os.contains("windows")) {
 				if (browser.equalsIgnoreCase("firefox")) {
-					System.setProperty("webdriver.gecko.driver", frameworkClassPath + "\\geckodriver.exe");
+					System.setProperty("webdriver.gecko.driver", frameworkClassPath + "/geckodriver.exe");
 					baseDriver = new FirefoxDriver();
 				} else if (browser.equalsIgnoreCase("chrome")) {
-					System.setProperty("webdriver.chrome.driver", frameworkClassPath + "\\chromedriver.exe");
+					System.setProperty("webdriver.chrome.driver", frameworkClassPath + "/chromedriver.exe");
 					baseDriver = new ChromeDriver();
 					baseDriver.manage().window().maximize();
 				} else {
 					System.out.println("Browser not available");
 					System.exit(0);
 				}
-			}else if(os.contains("linux")){
+			}else if(os.contains("linux") || os.contains("mac")){
 				if (browser.equalsIgnoreCase("firefox")) {
-					
+					System.setProperty("webdriver.gecko.marionette", frameworkClassPath + "/geckodriver");
+					baseDriver = new FirefoxDriver();
 				} else if (browser.equalsIgnoreCase("chrome")) {
-					
-				} else {
-					System.out.println("Browser not available");
-					System.exit(0);
-				}
-			}else if(os.contains("mac")){
-				if (browser.equalsIgnoreCase("firefox")) {
-					
-				} else if (browser.equalsIgnoreCase("chrome")) {
-					
+					System.setProperty("webdriver.chrome.driver", frameworkClassPath + "/chromedriver.exe");
+					baseDriver = new ChromeDriver();
+					baseDriver.manage().window().maximize();
 				} else {
 					System.out.println("Browser not available");
 					System.exit(0);
