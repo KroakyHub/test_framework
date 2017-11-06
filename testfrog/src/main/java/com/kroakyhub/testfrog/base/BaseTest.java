@@ -127,7 +127,7 @@ public class BaseTest {
 		if (driverObject == null) {
 			imageFileName = "No Image Captured";
 		} else {
-			String customeLocation = "\\src\\test\\resources\\screenshots\\";
+			String customeLocation = "/src/test/resources/screenshots/";
 			FileStructureHelper.makeDirectory(testClassPath + customeLocation);
 			imageFileName = testClassPath + customeLocation
 					+ new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(new GregorianCalendar().getTime()) + "-"
@@ -163,7 +163,7 @@ public class BaseTest {
 	}
 
 	public void initializeReports() {
-		String reportPath = testClassPath + "\\testfrogreport.html";
+		String reportPath = testClassPath + "/testfrogreport.html";
 		report = new ExtentReports(reportPath);
 	}
 
