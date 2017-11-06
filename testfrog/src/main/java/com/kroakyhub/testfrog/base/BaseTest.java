@@ -106,7 +106,7 @@ public class BaseTest {
 					System.setProperty("webdriver.gecko.marionette", frameworkClassPath + "/geckodriver");
 					baseDriver = new FirefoxDriver();
 				} else if (browser.equalsIgnoreCase("chrome")) {
-					System.setProperty("webdriver.chrome.driver", frameworkClassPath + "/chromedriver.exe");
+					System.setProperty("webdriver.chrome.driver", frameworkClassPath + "/chromedriver");
 					baseDriver = new ChromeDriver();
 					baseDriver.manage().window().maximize();
 				} else {
